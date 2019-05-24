@@ -38,6 +38,7 @@ public class CacheConfiguration {
             cm.createCache(fr.iut.lens.lensleau.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(fr.iut.lens.lensleau.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(fr.iut.lens.lensleau.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(fr.iut.lens.lensleau.domain.Country.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

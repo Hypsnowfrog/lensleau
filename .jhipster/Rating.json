@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "skill",
+            "otherEntityName": "skill",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "jhi_user",
+            "otherEntityName": "jhi_user",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "creationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "creationUser",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastUpdateDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpdateUser",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ratingValue",
+            "fieldType": "RatingValue",
+            "fieldValues": "EXPERT,ADVANCED,INTERMEDIATE,BEGINNER,NONE,EMPTY"
+        }
+    ],
+    "changelogDate": "20180423144925",
+    "entityTableName": "rating",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true
+}

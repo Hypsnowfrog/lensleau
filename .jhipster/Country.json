@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "capital",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "population",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "surface",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "coffeeProduction",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "201905241600",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "country",
+    "jpaMetamodelFiltering": true,
+    "pagination": "no"
+}

@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="country">
+            <h2><span jhiTranslate="lensleauApp.country.detail.title">Country</span> {{country.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="lensleauApp.country.name">Name</span></dt>
+                <dd>
+                    <span>{{country.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="lensleauApp.country.description">Description</span></dt>
+                <dd>
+                    <span>{{country.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="lensleauApp.country.capital">Capital</span></dt>
+                <dd>
+                    <span>{{country.capital}}</span>
+                </dd>
+                <dt><span jhiTranslate="lensleauApp.country.population">Population</span></dt>
+                <dd>
+                    <span>{{country.population}}</span>
+                </dd>
+                <dt><span jhiTranslate="lensleauApp.country.surface">Surface</span></dt>
+                <dd>
+                    <span>{{country.surface}}</span>
+                </dd>
+                <dt><span jhiTranslate="lensleauApp.country.coffeeProduction">Coffee Production</span></dt>
+                <dd>
+                    <span>{{country.coffeeProduction}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/country', country.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
