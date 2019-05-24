@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stock">
+            <h2><span jhiTranslate="lensleauApp.stock.detail.title">Stock</span> {{stock.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="lensleauApp.stock.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{stock.quantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="lensleauApp.stock.jhi_user">Jhi User</span></dt>
+                <dd>
+                    {{stock.jhi_user?.id}}
+                </dd>
+                <dt><span jhiTranslate="lensleauApp.stock.coffee_type">Coffee Type</span></dt>
+                <dd>
+                    <div *ngIf="stock.coffee_type">
+                        <a [routerLink]="['/coffee-type', stock.coffee_type?.id, 'view']">{{stock.coffee_type?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/stock', stock.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

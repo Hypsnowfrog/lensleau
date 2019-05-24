@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-stock-heading" jhiTranslate="lensleauApp.stock.home.createOrEditLabel">Create or edit a Stock</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!stock.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="stock.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lensleauApp.stock.quantity" for="field_quantity">Quantity</label>
+                    <input type="number" class="form-control" name="quantity" id="field_quantity"
+                        [(ngModel)]="stock.quantity" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lensleauApp.stock.jhi_user" for="field_jhi_user">Jhi User</label>
+                    <select class="form-control" id="field_jhi_user" name="jhi_user" [(ngModel)]="stock.jhi_user" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === stock.jhi_user?.id ? stock.jhi_user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lensleauApp.stock.coffee_type" for="field_coffee_type">Coffee Type</label>
+                    <select class="form-control" id="field_coffee_type" name="coffee_type" [(ngModel)]="stock.coffee_type" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="coffeeTypeOption.id === stock.coffee_type?.id ? stock.coffee_type : coffeeTypeOption" *ngFor="let coffeeTypeOption of coffeetypes; trackBy: trackCoffeeTypeById">{{coffeeTypeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

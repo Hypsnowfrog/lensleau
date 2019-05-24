@@ -1,0 +1,16 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "coffeeType",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "201905241600",
+    "entityTableName": "coffee_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true
+}
