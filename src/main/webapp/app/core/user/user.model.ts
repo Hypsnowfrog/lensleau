@@ -1,3 +1,10 @@
+import {Country} from 'app/shared/model/country.model';
+
+export enum UserType {
+    IMPORTER,
+    EXPORTER
+}
+
 export interface IUser {
     id?: any;
     login?: string;
@@ -12,6 +19,14 @@ export interface IUser {
     lastModifiedBy?: string;
     lastModifiedDate?: Date;
     password?: string;
+    company?: string;
+    phone?: string;
+    city?: string;
+    country?: Country;
+    zip?: string;
+    streetNum?: string;
+    streetName?: string;
+    userType?: UserType;
 }
 
 export class User implements IUser {
@@ -28,7 +43,15 @@ export class User implements IUser {
         public createdDate?: Date,
         public lastModifiedBy?: string,
         public lastModifiedDate?: Date,
-        public password?: string
+        public password?: string,
+        public company?: string,
+        public phone?: string,
+        public city?: string,
+        public country?: Country,
+        public zip?: string,
+        public streetNum?: string,
+        public streetName?: string,
+        public userType?: UserType,
     ) {
         this.id = id ? id : null;
         this.login = login ? login : null;
@@ -43,5 +66,12 @@ export class User implements IUser {
         this.lastModifiedBy = lastModifiedBy ? lastModifiedBy : null;
         this.lastModifiedDate = lastModifiedDate ? lastModifiedDate : null;
         this.password = password ? password : null;
+        this.company = company ? company : null;
+        this.phone = phone ? phone : null;
+        this.city = city ? city : null;
+        this.zip = zip ? zip : null;
+        this.streetNum = streetNum ? streetNum : null;
+        this.streetName = streetName ? streetName : null;
+        this.userType = userType ? userType : null;
     }
 }

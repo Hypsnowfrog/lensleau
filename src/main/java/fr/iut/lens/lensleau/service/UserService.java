@@ -108,10 +108,18 @@ public class UserService {
         newUser.setFirstName(userDTO.getFirstName());
         newUser.setLastName(userDTO.getLastName());
         newUser.setEmail(userDTO.getEmail().toLowerCase());
+        newUser.setCompany(userDTO.getCompany());
+        newUser.setCountry(userDTO.getCountry());
+        newUser.setPhone(userDTO.getPhone());
+        newUser.setCity(userDTO.getCity());
+        newUser.setZip(userDTO.getZip());
+        newUser.setStreetName(userDTO.getStreetName());
+        newUser.setStreetNum(userDTO.getStreetNum());
+        newUser.setUserType(userDTO.getUserType());
         newUser.setImageUrl(userDTO.getImageUrl());
         newUser.setLangKey(userDTO.getLangKey());
         // new user is not active
-        newUser.setActivated(false);
+        newUser.setActivated(true);
         // new user gets registration key
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         Set<Authority> authorities = new HashSet<>();

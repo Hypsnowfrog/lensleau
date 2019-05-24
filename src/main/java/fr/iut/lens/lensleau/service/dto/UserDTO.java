@@ -3,7 +3,9 @@ package fr.iut.lens.lensleau.service.dto;
 import fr.iut.lens.lensleau.config.Constants;
 
 import fr.iut.lens.lensleau.domain.Authority;
+import fr.iut.lens.lensleau.domain.Country;
 import fr.iut.lens.lensleau.domain.User;
+import fr.iut.lens.lensleau.domain.UserType;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -52,6 +54,22 @@ public class UserDTO {
     private Instant lastModifiedDate;
 
     private Set<String> authorities;
+
+    private UserType userType;
+
+    private String company;
+
+    private Country country;
+
+    private String city;
+
+    private String zip;
+
+    private String streetName;
+
+    private Long streetNum;
+
+    private String phone;
 
     public UserDTO() {
         // Empty constructor needed for Jackson.
@@ -195,5 +213,69 @@ public class UserDTO {
             ", lastModifiedDate=" + lastModifiedDate +
             ", authorities=" + authorities +
             "}";
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
+    }
+
+    public Long getStreetNum() {
+        return streetNum;
+    }
+
+    public void setStreetNum(Long streetNum) {
+        this.streetNum = streetNum;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

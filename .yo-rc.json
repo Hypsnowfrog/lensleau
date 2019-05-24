@@ -35,6 +35,8 @@
     "nativeLanguage": "en",
     "languages": [
       "en"
-    ]
+    ],
+    "herokuAppName": "lensleau",
+    "herokuDeployType": "jar"
   }
 }

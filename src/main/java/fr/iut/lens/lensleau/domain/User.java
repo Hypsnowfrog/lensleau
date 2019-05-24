@@ -84,6 +84,30 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(name = "reset_date")
     private Instant resetDate = null;
 
+    @Column(name = "user_type")
+    private UserType userType;
+
+    @Column(name = "company")
+    private String company;
+
+    @ManyToOne
+    private Country country;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "zip")
+    private String zip;
+
+    @Column(name = "street_name")
+    private String streetName;
+
+    @Column(name = "street_num")
+    private Long streetNum;
+
+    @Column(name = "phone")
+    private String phone;
+
     @JsonIgnore
     @ManyToMany
     @JoinTable(
@@ -199,6 +223,22 @@ public class User extends AbstractAuditingEntity implements Serializable {
         this.authorities = authorities;
     }
 
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -229,5 +269,53 @@ public class User extends AbstractAuditingEntity implements Serializable {
             ", langKey='" + langKey + '\'' +
             ", activationKey='" + activationKey + '\'' +
             "}";
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public Long getStreetNum() {
+        return streetNum;
+    }
+
+    public void setStreetNum(Long streetNum) {
+        this.streetNum = streetNum;
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
     }
 }
