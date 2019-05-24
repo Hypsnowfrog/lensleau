@@ -12,9 +12,76 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.webapp" />
     <link rel="stylesheet" href="content/css/loading.css">
-    <!-- jhipster-needle-add-resources-to-root - JHipster will add new resources here -->
-</head>
+    <script class="animation">
+        var pos = 0;
+        var turn = 0;
+        var data = [''];
+        var speed = 185;
+
+        setTimeout(typeWriter, speed);
+
+        function typeWriter() {
+            if (pos < data[turn].length) {
+                document.getElementById("demo").innerHTML += data[turn].charAt(pos);
+                pos++;
+                setTimeout(typeWriter, speed);
+            } else {
+                setTimeout(erase, speed+100);
+            }
+        }
+
+        function erase() {
+            if (pos >= 0) {
+                var str=data[turn].toString().substring(0, pos);
+                document.getElementById("demo").innerHTML = str;
+                pos--;
+                setTimeout(erase, speed-100);
+            }
+            else {
+                turn++;
+                if(turn>=data.length)
+                    turn=0;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        function getWindowHeight() {
+            var windowHeight=0;
+            if (typeof(window.innerHeight)=='number') {
+                windowHeight=window.innerHeight;
+            } else {
+                if (document.documentElement&& document.documentElement.clientHeight) {
+                    windowHeight = document.documentElement.clientHeight;
+                } else {
+                    if (document.body&&document.body.clientHeight) {
+                        windowHeight=document.body.clientHeight;
+                    }
+                }
+            }
+            return windowHeight;
+        }
+        function getWindowWidth() {
+            var windowWidth=0;
+            if (typeof(window.innerWidth)=='number') {
+                windowWidth=window.innerWidth;
+            } else {
+                if (document.documentElement&& document.documentElement.clientWidth) {
+                    windowWidth = document.documentElement.clientWidth;
+                } else {
+                    if (document.body&&document.body.clientWidth) {
+                        windowWidth=document.body.clientWidth;
+                    }
+                }
+            }
+            return windowWidth;
+        }
+        ny=getWindowHeight();
+        nx=getWindowWidth();
+    </script>
+        <!-- jhipster-needle-add-resources-to-root - JHipster will add new resources here -->
+        </head>
 <body>
+
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
