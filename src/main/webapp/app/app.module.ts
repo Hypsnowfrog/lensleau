@@ -20,10 +20,10 @@ import { LensleauEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
-import { TestComponent } from './test/test.component';
 import { ProductorsListComponent } from 'app/productors-list/productors-list.component';
 import { CommandCoffeeComponent } from 'app/command-coffee/command-coffee.component';
 import { CommandsListComponent } from 'app/commands-list/commands-list.component';
+import { AproposComponent } from './apropos/apropos.component';
 
 @NgModule({
     imports: [
@@ -51,10 +51,10 @@ import { CommandsListComponent } from 'app/commands-list/commands-list.component
         PageRibbonComponent,
         ActiveMenuDirective,
         FooterComponent,
-        ProductorsListComponent,
-        CommandCoffeeComponent,
+        AproposComponent,
         CommandsListComponent,
-        TestComponent
+        ProductorsListComponent,
+        CommandCoffeeComponent
     ],
     providers: [
         {
