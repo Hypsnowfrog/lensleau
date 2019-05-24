@@ -1,0 +1,21 @@
+{
+    "lensleauApp": {
+        "coffeeType": {
+            "home": {
+                "title": "Coffee Types",
+                "createLabel": "Create a new Coffee Type",
+                "createOrEditLabel": "Create or edit a Coffee Type"
+            },
+            "created": "A new Coffee Type is created with identifier {{ param }}",
+            "updated": "A Coffee Type is updated with identifier {{ param }}",
+            "deleted": "A Coffee Type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Coffee Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Coffee Type"
+            },
+            "coffeeType": "Coffee Type"
+        }
+    }
+}
