@@ -1,10 +1,12 @@
 import { Component, OnInit, AfterViewInit, Renderer, ElementRef } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import {CountryService} from 'app/entities/country';
+import {Country} from 'app/shared/model/country.model';
 import { JhiLanguageService } from 'ng-jhipster';
 
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared';
-import { LoginModalService } from 'app/core';
+import {LoginModalService, User} from 'app/core';
 import { Register } from './register.service';
 
 @Component({
@@ -17,11 +19,13 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     error: string;
     errorEmailExists: string;
     errorUserExists: string;
-    registerAccount: any;
+    registerAccount: User;
     success: boolean;
     modalRef: NgbModalRef;
+    countries: Country[];
 
     constructor(
+        private countryService: CountryService,
         private languageService: JhiLanguageService,
         private loginModalService: LoginModalService,
         private registerService: Register,
@@ -30,6 +34,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     ) {}
 
     ngOnInit() {
+        this.loadCountries();
         this.success = false;
         this.registerAccount = {};
     }
@@ -71,5 +76,13 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         } else {
             this.error = 'ERROR';
         }
+    }
+
+    private loadCountries() {
+        this.countryService.query().subscribe(
+            (res) => {
+                this.countries = res.body;
+            }
+        )
     }
 }
