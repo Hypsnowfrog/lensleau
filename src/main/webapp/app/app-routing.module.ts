@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { errorRoute, navbarRoute } from './layouts';
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
+import { AproposComponent } from 'app/apropos/apropos.component';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -12,6 +13,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
                 {
                     path: 'admin',
                     loadChildren: './admin/admin.module#LensleauAdminModule'
+                },
+                {
+                    path: 'about',
+                    component: AproposComponent
                 },
                 ...LAYOUT_ROUTES
             ],

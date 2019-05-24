@@ -20,7 +20,7 @@ import { LensleauEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
-import { TestComponent } from './test/test.component';
+import { AproposComponent } from './apropos/apropos.component';
 
 @NgModule({
     imports: [
@@ -48,7 +48,7 @@ import { TestComponent } from './test/test.component';
         PageRibbonComponent,
         ActiveMenuDirective,
         FooterComponent,
-        TestComponent
+        AproposComponent
     ],
     providers: [
         {
