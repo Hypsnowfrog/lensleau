@@ -15,7 +15,7 @@
     <script class="animation">
         var pos = 0;
         var turn = 0;
-        var data = ['Mathis Haloy','Anthony Pereira','Théophile Cosse','Benoît Brebion','Quentin Pierson'];
+        var data = [''];
         var speed = 185;
 
         setTimeout(typeWriter, speed);
@@ -23,7 +23,6 @@
         function typeWriter() {
             if (pos < data[turn].length) {
                 document.getElementById("demo").innerHTML += data[turn].charAt(pos);
-                console.log(data[turn].charAt(pos));
                 pos++;
                 setTimeout(typeWriter, speed);
             } else {
