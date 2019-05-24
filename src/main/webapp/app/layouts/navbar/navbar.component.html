@@ -147,7 +147,13 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" [routerLink]="['./about']" (click)="collapseNavbar()">
+                    <span>
+                        <span>About</span>
+                    </span>
+                </a>
+            </li>
         </ul>
-        <button [routerLink]="['./about']">About</button>
     </div>
 </nav>
